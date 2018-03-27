@@ -140,6 +140,8 @@
              totalUsersDistance += usersDistanceArr[i];
          }
          $("#average-distance").append("Μέση απόσταση: " + totalUsersDistance / usersDistanceArr.length + " μέτρα");
+         $("#total-distance").append("Συνολική απόσταση: " + totalUsersDistance / 1000 + " χιλιόμετρα");
+
          // Vertical bar chart that displays the time per user
          horizontalBar = document.getElementById('horizontal-bar');
          var horizontalBarData = [{
@@ -184,6 +186,7 @@
          }
 
          $("#average-time").append("Μέσoς χρόνος: " + totalUsersTime / usersTimeArr.length + " λεπτά");
+         $("#total-time").append("Συνολικός χρόνος: " + totalUsersTime / 60 + " ώρες");
 
          // Line graph that displays speed per user
          lineGraph = document.getElementById('line-graph');
