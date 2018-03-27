@@ -1,0 +1,105 @@
+            html,
+        body {
+            font-family: Verdana, Geneva, sans-serif !important;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        .ui-tabs .ui-tabs-nav li a {
+            outline: none;
+        }
+        
+        h3 {
+            font-family: '"Lucida Sans Unicode", "Lucida Grande", sans-serif';
+            font-size: 18px;
+            color: #1b8598;
+            text-align: center;
+        }
+        
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 55px;
+        }
+        
+        #line-graph .plot-container .svg-container,
+        #horizontal-bar .plot-container .svg-container,
+        #bar-chart .plot-container .svg-container {
+            left: 50%;
+            margin-left: -500px;
+        }
+        
+        #average-distance,
+        #average-time,
+        #average-speed {
+            font: normal normal 700 18px/1 '"Lucida Sans Unicode", "Lucida Grande", sans-serif';
+            color: #1b8598;
+            text-align: center;
+        }
+        
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+            background-color: #fff;
+            border: 1px solid #999;
+            left: 25%;
+            padding: 5px;
+            position: absolute;
+            top: 68px;
+            z-index: 5;
+        }
+        
+        #overlay {
+            opacity: 0.7;
+            background-color: #aaacaf;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+        }
+        
+        #loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            margin-top: -60px;
+            margin-left: -60px;
+            z-index: 4;
+        }
+        /* Safari */
+        
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- reference to jquery.ui.tabs.css style file -->
+    <link href="Content/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="Scripts/plotly/plotly-latest.min.js" type="text/javascript"></script>
+    <link href="Content/custom-styles/styles.css" rel="stylesheet" type="text/css" />
+    <title>EndlessSearchStats</title>
+</head>
+
+<body>
+    <ul id="pageTabs">
+        <li><a href="#page1">Απόσταση</a></li>
+        <li><a href="#page2">Χρόνος</a></li>
+        <li><a href="#page3">Ταχύτητα</a></li>
+        <li><a href="#page4">Heatmap</a></li>
+    </ul>
+
+    <div id="overlay"></div>
+    <div id="loader"></div>
+
+    <!-- page 1 message colored in red -->
+    <div id="page1">
+        <div id="bar-chart"></div>
+        <span id="average-distance"></span>
+    </div>
+
+    <!-- page 2 message colored in blue -->
+    <div id="page2">
+        <div id="horizontal-bar"></div>
+        <span id="average-time"></span>
+    </div>
+
+    <!-- page 3 message colored in purple -->
+    <div id="page3">
+        <div id="line-graph"></div>
+        <span id="average-speed"></span>
+    </div>
+
+    <!-- page 4 message colored in green -->
+    <div id="page4">
+        <div id="floating-panel">
+            <button onclick="toggleHeatmap()">Εναλλαγή Heatmap</button>
+            <button onclick="changeGradient()">Αλλαγή χρώματος</button>
+            <button onclick="changeRadius()">Αλλαγή ακτίνας</button>
+            <button onclick="changeOpacity()">Αλλαγή διαφάνειας</button>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="Scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui-1.9.2.min.js" type="text/javascript"></script>
+    <script src="Scripts/BPF/bpf.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js "></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHc8e7UaFmIYsDYD9e8nCHaycmVrmF8Y0&callback=initMap&libraries=geometry,visualization">
+    </script>
+    <script src="Scripts/firebase-init.js "></script>
+    <script src="Scripts/custom-script.js" type="text/javascript"></script>
+</body>
+
+</html>
