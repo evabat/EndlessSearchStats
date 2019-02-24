@@ -81,10 +81,14 @@
          }
 
          // total time during which each user was collecting the items
-         var totalTime = getTimeInMinutes(startDate, endDate);
-         usersDistanceArr.push(totalDistance);
-         usersTimeArr.push(totalTime);
-         usersSpeedArr.push((totalDistance / 1000) / (totalTime / 60));
+		 var totalTime = getTimeInMinutes(startDate, endDate);
+			 // if user actually walked during an amount of time (exclude empty entries)
+			 if (totalTime) {
+				 usersDistanceArr.push(totalDistance);
+				 usersTimeArr.push(totalTime);
+				 usersSpeedArr.push((totalDistance / 1000) / (totalTime / 60));
+			 }
+		 
      });
 
  });
@@ -117,7 +121,7 @@
                  color: '#1b8598',
              },
              xaxis: {
-                 title: 'Χρήστες',
+                 title: 'Απόσταση',
                  titlefont: {
                      family: '"Lucida Sans Unicode", "Lucida Grande", sans-serif',
                      size: 18,
@@ -125,7 +129,7 @@
                  }
              },
              yaxis: {
-                 title: 'Απόσταση',
+                 title: 'Χρήστες',
                  titlefont: {
                      family: '"Lucida Sans Unicode", "Lucida Grande", sans-serif',
                      size: 18,
@@ -137,7 +141,10 @@
          var totalUsersDistance = 0;
 
          for (var i = 0; i < usersDistanceArr.length; i++) {
-             totalUsersDistance += usersDistanceArr[i];
+			 if (usersDistanceArr[i]) {
+				totalUsersDistance += usersDistanceArr[i];
+			 }
+   
          }
          $("#average-distance").append("Μέση απόσταση: " + totalUsersDistance / usersDistanceArr.length + " μέτρα");
          $("#total-distance").append("Συνολική απόσταση: " + totalUsersDistance / 1000 + " χιλιόμετρα");
@@ -161,7 +168,7 @@
                  color: '#1b8598',
              },
              xaxis: {
-                 title: 'Διάρκεια (σε λεπτά)',
+                 title: 'Χρήστες',
                  titlefont: {
                      family: '"Lucida Sans Unicode", "Lucida Grande", sans-serif',
                      size: 18,
@@ -169,7 +176,7 @@
                  }
              },
              yaxis: {
-                 title: 'Χρήστες',
+                 title: 'Διάρκεια (σε λεπτά)',
                  titlefont: {
                      family: '"Lucida Sans Unicode", "Lucida Grande", sans-serif',
                      size: 18,
@@ -182,7 +189,10 @@
          var totalUsersTime = 0;
 
          for (var i = 0; i < usersTimeArr.length; i++) {
-             totalUsersTime += usersTimeArr[i];
+			 if (usersTimeArr[i]) {
+			  totalUsersTime += usersTimeArr[i];
+			 }
+
          }
 
          $("#average-time").append("Μέσoς χρόνος: " + totalUsersTime / usersTimeArr.length + " λεπτά");
